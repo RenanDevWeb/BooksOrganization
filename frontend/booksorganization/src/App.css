@@ -1,0 +1,29 @@
+.App{
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-areas: "header header"
+                       "menu grid "
+                      "menu grid "
+  ;
+  height: 100vh;
+
+}
+
+.header{
+  background-color: blue;
+  grid-area: header;
+  margin: 0;
+  height: 20vh;
+}
+
+.menu{
+  margin: 0;
+  background-color: yellow;
+  grid-area: menu;
+}
+
+.grid{
+  background-color: violet;
+  grid-area: grid;
+}
