@@ -25,13 +25,16 @@ export const addBook = async (req, res) => {
   const { category } = req.body;
   const { pages } = req.body;
   const { status } = req.body;
+  const { username } = req.body;
   const book = {
     title,
     author,
     category,
     pages,
     status,
+    username
   };
+
   try {
     const newBook = new bookModel(book);
     newBook.save();

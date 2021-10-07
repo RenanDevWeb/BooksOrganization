@@ -1,7 +1,7 @@
 import express from 'express'
-import cors from 'cors'
 import moongose from 'mongoose'
 import booksRoutes from './routes/books.js'
+import  userRoutes from './routes/user.js'
 import dotenv from 'dotenv'
 dotenv.config()
 
@@ -13,6 +13,9 @@ const app = express()
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true}))
+
+
+app.use('/user', userRoutes )
 app.use('/books', booksRoutes)
 
 
@@ -25,7 +28,7 @@ app.get("/", async(req, res) => {
    })
 }
 )
-app.listen(3000,() => {
+app.listen(3001,() => {
   console.log("pagina subui");
   moongose.connect(CONNECTION_URL, {useNewUrlParser: true, useUnifiedTopology: true})
       .then(()=> {

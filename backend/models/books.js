@@ -6,6 +6,7 @@ const booksSchema = mongoose.Schema({
    category: String,
    pages: Number,
    status: Number,
+   username: String,
    createdAt: {
      type: Date,
      date: new Date()
